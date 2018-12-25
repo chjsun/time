@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		943EAC56216C5B740095522A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EAC55216C5B740095522A /* AppDelegate.m */; };
 		943EAC59216C5B740095522A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EAC58216C5B740095522A /* ViewController.m */; };
-		943EAC5C216C5B740095522A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943EAC5A216C5B740095522A /* Main.storyboard */; };
 		943EAC5E216C5B760095522A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943EAC5D216C5B760095522A /* Assets.xcassets */; };
 		943EAC61216C5B760095522A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943EAC5F216C5B760095522A /* LaunchScreen.storyboard */; };
 		943EAC64216C5B760095522A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EAC63216C5B760095522A /* main.m */; };
 		943EAC6E216C5B760095522A /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EAC6D216C5B760095522A /* TimeTests.m */; };
 		943EAC79216C5B760095522A /* TimeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EAC78216C5B760095522A /* TimeUITests.m */; };
+		943EAC89216C5C980095522A /* CJTimeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EAC88216C5C980095522A /* CJTimeConfig.m */; };
+		943EAC8C216C8BAE0095522A /* CJTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EAC8B216C8BAE0095522A /* CJTime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		943EAC55216C5B740095522A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		943EAC57216C5B740095522A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		943EAC58216C5B740095522A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		943EAC5B216C5B740095522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		943EAC5D216C5B760095522A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		943EAC60216C5B760095522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		943EAC62216C5B760095522A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +51,10 @@
 		943EAC74216C5B760095522A /* TimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		943EAC78216C5B760095522A /* TimeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeUITests.m; sourceTree = "<group>"; };
 		943EAC7A216C5B760095522A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		943EAC87216C5C980095522A /* CJTimeConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJTimeConfig.h; sourceTree = "<group>"; };
+		943EAC88216C5C980095522A /* CJTimeConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJTimeConfig.m; sourceTree = "<group>"; };
+		943EAC8A216C8BAE0095522A /* CJTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJTime.h; sourceTree = "<group>"; };
+		943EAC8B216C8BAE0095522A /* CJTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJTime.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,11 @@
 		943EAC53216C5B740095522A /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				943EAC86216C5C880095522A /* CJTime */,
 				943EAC54216C5B740095522A /* AppDelegate.h */,
 				943EAC55216C5B740095522A /* AppDelegate.m */,
 				943EAC57216C5B740095522A /* ViewController.h */,
 				943EAC58216C5B740095522A /* ViewController.m */,
-				943EAC5A216C5B740095522A /* Main.storyboard */,
 				943EAC5D216C5B760095522A /* Assets.xcassets */,
 				943EAC5F216C5B760095522A /* LaunchScreen.storyboard */,
 				943EAC62216C5B760095522A /* Info.plist */,
@@ -130,6 +134,17 @@
 				943EAC7A216C5B760095522A /* Info.plist */,
 			);
 			path = TimeUITests;
+			sourceTree = "<group>";
+		};
+		943EAC86216C5C880095522A /* CJTime */ = {
+			isa = PBXGroup;
+			children = (
+				943EAC87216C5C980095522A /* CJTimeConfig.h */,
+				943EAC88216C5C980095522A /* CJTimeConfig.m */,
+				943EAC8A216C8BAE0095522A /* CJTime.h */,
+				943EAC8B216C8BAE0095522A /* CJTime.m */,
+			);
+			path = CJTime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +209,7 @@
 		943EAC49216C5B740095522A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CJ;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "孙传俊";
 				TargetAttributes = {
@@ -237,7 +253,6 @@
 			files = (
 				943EAC61216C5B760095522A /* LaunchScreen.storyboard in Resources */,
 				943EAC5E216C5B760095522A /* Assets.xcassets in Resources */,
-				943EAC5C216C5B740095522A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +280,8 @@
 				943EAC59216C5B740095522A /* ViewController.m in Sources */,
 				943EAC64216C5B760095522A /* main.m in Sources */,
 				943EAC56216C5B740095522A /* AppDelegate.m in Sources */,
+				943EAC8C216C8BAE0095522A /* CJTime.m in Sources */,
+				943EAC89216C5C980095522A /* CJTimeConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		943EAC5A216C5B740095522A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				943EAC5B216C5B740095522A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		943EAC5F216C5B760095522A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,13 +447,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZP6CZ68WG4;
 				INFOPLIST_FILE = Time/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lutuxinxi.Time;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -455,13 +465,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZP6CZ68WG4;
 				INFOPLIST_FILE = Time/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lutuxinxi.Time;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
