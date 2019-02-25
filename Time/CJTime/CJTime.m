@@ -280,7 +280,6 @@
     return [self distanceNowDate:time];
 }
 
-
 /**
  距离今天过了多少年
  比较年
@@ -322,10 +321,9 @@
  @return 距离的天数，1代表昨天，2代表前天 以此类推
  */
 + (NSInteger)distanceToday:(NSDate *)date{
-    NSCalendar *calendar = [self calendar];
-    NSDateComponents *result = [calendar components:NSCalendarUnitDay fromDate:date toDate:[NSDate date] options:NSCalendarWrapComponents];
-    return result.day;
+    return -date.timeIntervalSinceNow/86400;
 }
+
 + (NSInteger)distanceToday:(NSString *)date formatType:(NSString *)type{
     NSDate *time = [self stringToDate:date format:type];
     return [self distanceToday:time];
@@ -339,9 +337,7 @@
  @return 多少个小时
  */
 + (NSInteger)distanceHoursDate:(NSDate *)date{
-    NSCalendar *calendar = [self calendar];
-    NSDateComponents *result = [calendar components:NSCalendarUnitHour fromDate:date toDate:[NSDate date] options:NSCalendarWrapComponents];
-    return result.hour;
+    return -date.timeIntervalSinceNow/3600;
 }
 + (NSInteger)distanceHoursDate:(NSString *)date formatType:(NSString *)type{
     NSDate *time = [self stringToDate:date format:type];
@@ -355,9 +351,7 @@
  @return 多少分钟
  */
 + (NSInteger)distanceMinuteDate:(NSDate *)date{
-    NSCalendar *calendar = [self calendar];
-    NSDateComponents *result = [calendar components:NSCalendarUnitMinute fromDate:date toDate:[NSDate date] options:NSCalendarWrapComponents];
-    return result.minute;
+    return -date.timeIntervalSinceNow/60;
 }
 + (NSInteger)distanceMinuteDate:(NSString *)date formatType:(NSString *)type{
     NSDate *time = [self stringToDate:date format:type];
@@ -371,9 +365,7 @@
  @return 多少秒
  */
 + (NSInteger)distanceSecondDate:(NSDate *)date{
-    NSCalendar *calendar = [self calendar];
-    NSDateComponents *result = [calendar components:NSCalendarUnitSecond fromDate:date toDate:[NSDate date] options:NSCalendarWrapComponents];
-    return result.second;
+    return -date.timeIntervalSinceNow;
 }
 + (NSInteger)distanceSecondDate:(NSString *)date formatType:(NSString *)type{
     NSDate *time = [self stringToDate:date format:type];
@@ -385,7 +377,7 @@
  获得两个时间的年数差
 
  @param date 时间
- @return 多少秒
+ @return 多少
  */
 + (NSInteger)distanceYearDate:(NSDate *)date nextDate:(NSDate *)nextDate{
     NSCalendar *calendar = [self calendar];
@@ -403,7 +395,7 @@
  获得两个时间的月数差
 
  @param date 时间
- @return 多少秒
+ @return 多少
  */
 + (NSInteger)distanceMonthDate:(NSDate *)date nextDate:(NSDate *)nextDate{
     NSCalendar *calendar = [self calendar];
@@ -421,12 +413,13 @@
  获得两个时间的日数差
 
  @param date 时间
- @return 多少秒
+ @return 多少
  */
 + (NSInteger)distanceDayDate:(NSDate *)date nextDate:(NSDate *)nextDate{
-    NSCalendar *calendar = [self calendar];
-    NSDateComponents *result = [calendar components:NSCalendarUnitDay fromDate:date toDate:nextDate options:NSCalendarWrapComponents];
-    return result.day;
+    NSTimeInterval start = [date timeIntervalSince1970] * 1;
+    NSTimeInterval end = [nextDate timeIntervalSince1970] * 1;
+    NSTimeInterval value = end - start;
+    return value/86400;
 }
 + (NSInteger)distanceDayDate:(NSString *)date dateFormat:(NSString *)dateFormat nextDate:(NSString *)nextDate nextDateFormat:(NSString *)nextDateFormat{
 
@@ -443,9 +436,10 @@
  @return 多少秒
  */
 + (NSInteger)distanceHourDate:(NSDate *)date nextDate:(NSDate *)nextDate{
-    NSCalendar *calendar = [self calendar];
-    NSDateComponents *result = [calendar components:NSCalendarUnitHour fromDate:date toDate:nextDate options:NSCalendarWrapComponents];
-    return result.hour;
+    NSTimeInterval start = [date timeIntervalSince1970] * 1;
+    NSTimeInterval end = [nextDate timeIntervalSince1970] * 1;
+    NSTimeInterval value = end - start;
+    return value/3600;
 }
 + (NSInteger)distanceHourDate:(NSString *)date dateFormat:(NSString *)dateFormat nextDate:(NSString *)nextDate nextDateFormat:(NSString *)nextDateFormat{
     NSDate *time = [self stringToDate:date format:dateFormat];
@@ -461,9 +455,10 @@
  @return 多少分
  */
 + (NSInteger)distanceMinuteDate:(NSDate *)date nextDate:(NSDate *)nextDate{
-    NSCalendar *calendar = [self calendar];
-    NSDateComponents *result = [calendar components:NSCalendarUnitMinute fromDate:date toDate:nextDate options:NSCalendarWrapComponents];
-    return result.minute;
+    NSTimeInterval start = [date timeIntervalSince1970] * 1;
+    NSTimeInterval end = [nextDate timeIntervalSince1970] * 1;
+    NSTimeInterval value = end - start;
+    return value/60;
 }
 + (NSInteger)distanceMinuteDate:(NSString *)date dateFormat:(NSString *)dateFormat nextDate:(NSString *)nextDate nextDateFormat:(NSString *)nextDateFormat{
     NSDate *time = [self stringToDate:date format:dateFormat];
@@ -480,9 +475,10 @@
  @return 多少秒
  */
 + (NSInteger)distanceSecondDate:(NSDate *)date nextDate:(NSDate *)nextDate{
-    NSCalendar *calendar = [self calendar];
-    NSDateComponents *result = [calendar components:NSCalendarUnitSecond fromDate:date toDate:nextDate options:NSCalendarWrapComponents];
-    return result.second;
+    NSTimeInterval start = [date timeIntervalSince1970] * 1;
+    NSTimeInterval end = [nextDate timeIntervalSince1970] * 1;
+    NSTimeInterval value = end - start;
+    return value;
 }
 
 + (NSInteger)distanceSecondDate:(NSString *)date dateFormat:(NSString *)dateFormat nextDate:(NSString *)nextDate nextDateFormat:(NSString *)nextDateFormat{

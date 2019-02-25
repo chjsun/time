@@ -38,10 +38,7 @@
 }
 
 -(void)prepareData{
-//                                           2018-11-09
-    NSLog(@"%@", [CJTime distanceNowDate:@"2011-11-09 16:14:00" formatType:kFormatType1]);
-
-    NSLog(@"%ld", (long)[CJTime distanceToday:@"2011-10-01" formatType:kFormatType2]);
+    NSLog(@"%ld", [CJTime distanceSecondDate:@"1-02-20 10:09:00" formatType:kFormatType1]);
 
 }
 
